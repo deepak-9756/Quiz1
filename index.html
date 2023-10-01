@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div class="navbar">
+                <h2>Quiz</h2>
+                <h1>Welcome Coders for Join free Quiz</h1>
+                <h1 id="optional">Welcome Coders</h1>
+            </div>
+        </header>
+        <div class="sign-in">
+            <form onsubmit="return f()"
+            action="">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Name" required>
+                <label for="subject">Choose Your Subject:</label>
+                <select id="subject">
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="Html">Html</option>
+                    <option value="Css">Css</option>
+                </select>
+                <button>Join</button>
+            </form>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        function f()
+        {
+            let op = document.getElementById('subject');
+            let s = op.options[op.selectedIndex].value;
+            if(s=="Java")
+                $('form').attr('action',"./Java/java.html");
+            if(s=="C++")
+                $('form').attr('action',"./C++/c++.html");
+            if(s=="Html")
+                $('form').attr('action',"./Html/HTML.html");
+            if(s=="Css")
+                $('form').attr('action',"./Css/css.html");       
+        }
+    </script>
+</body>
+</html>
